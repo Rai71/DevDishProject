@@ -3,62 +3,81 @@
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 body{
   background-color: #150f29;
+  overflow-x: hidden;
 }
 
 .headerNav{
   display: flex;
-  width: auto;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #umamiLogo{
   height: 10vh;
+  width: auto;
+  max-width: 80px;
 }
 
 .navLinks{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 header {
   background-color: #150f29;
   color: #ffb94d;
-  padding: 20px;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }
 header h1 {
   margin: 0;
   font-size: 24px;
+  word-break: break-word;
 }
 nav {
-  margin-top: 12px;
+  margin-top: 0;
 }
 nav a {
   color: #e7deff;
   text-decoration: none;
   margin-right: 16px;
   font-weight: bold;
+  font-size: 14px;
 }
 nav a.active {
   color: #ffb94d;
   border-bottom: 2px solid #ffb94d;
 }
 .buttons {
-  margin-top: 16px;
+  margin-top: 0;
 }
 button {
   background-color: #ffb94d;
   color: #150f29;
   border: none;
-  padding: 10px 16px;
+  padding: 8px 14px;
   margin-right: 8px;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #dc9400;
 }
 
 
@@ -70,16 +89,25 @@ footer {
   color: #e7deff;
   padding: 20px;
   text-align: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
 }
 
 .textFooter{
-  width: 15vw;
+  width: 100%;
+  max-width: 15vw;
   display: flex;
   justify-content: space-around;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 200px;
 }
 
 #footerIMG{
   height: 10vh;
+  width: auto;
+  max-width: 60px;
 }
 
 
@@ -88,11 +116,12 @@ footer {
 /* Home */
 
 .homeContent {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 .heroSectionHome {
   position: relative;
   min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -177,6 +206,7 @@ footer {
 .heroLDcontent {
   position: relative;
   height: 400px;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,11 +293,14 @@ footer {
   display: flex;
   align-items: center;
   gap: 48px;
+  flex-wrap: wrap;
 }
 
 .dishIMGboxLD {
   width: 100%;
   max-width: 500px;
+  flex: 1 1 auto;
+  min-width: 280px;
 }
 
 .dishIMGld {
@@ -281,6 +314,9 @@ footer {
   width: 100%;
   max-width: 500px;
   text-align: center;
+  flex: 1 1 auto;
+  min-width: 280px;
+  padding: 0 16px;
 }
 
 .dishLabelLD {
@@ -314,7 +350,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  }
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
 .dishPriceLD {
   font-size: 1.5rem;
@@ -330,6 +368,11 @@ footer {
   background: none;
   cursor: pointer;
   color: #E7DEFF;
+  transition: color 0.3s ease;
+}
+
+.dishButtonLD:hover {
+  color: #FFB94D;
 }
 
         /* Warm Section */
@@ -371,10 +414,14 @@ footer {
   align-items: flex-start;
   border-bottom: 1px solid #ddd;
   padding-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .warmItemTextLD {
   max-width: 400px;
+  flex: 1 1 auto;
+  min-width: 200px;
 }
 
 .warmItemTextLD h4 {
@@ -393,12 +440,14 @@ footer {
   font-size: 1.25rem;
   font-weight: bold;
   color: #FFB94D;
+  flex: 0 0 auto;
 }
 
         /* CTA Section */
 .ctaLD {
   padding: 128px 0;
   text-align: center;
+  padding: 60px 20px;
 }
 
 .ctaBoxLD {
@@ -418,6 +467,8 @@ footer {
   display: flex;
   align-items: center;
   gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btnPrimaryLD {
@@ -427,6 +478,13 @@ footer {
   font-weight: bold;
   text-decoration: none;
   border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnPrimaryLD:hover {
+  background-color: #dc9400;
 }
 
 .btnSecondaryLD {
@@ -436,6 +494,14 @@ footer {
   font-weight: bold;
   text-decoration: none;
   border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnSecondaryLD:hover {
+  background-color: #FFB94D;
+  color: #150f29;
 }
 
 
@@ -452,15 +518,19 @@ footer {
 
 /* --- Hoofd Layout --- */
 .contentOP {
-    height: 63vh;
+    height: auto;
+    min-height: 63vh;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
 #kaartOP{
-  height: 40.5vh;
+  height: auto;
+  min-height: 300px;
   border-radius: 16px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .pageHeaderOP h1 {
@@ -507,6 +577,7 @@ footer {
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+    font-size: 1.25rem;
 }
 
 /* --- Knop Styling --- */
@@ -524,8 +595,9 @@ footer {
 }
 
 .btnPrimaryOP:hover {
-    background-color: #dc9400; /* Iets donkerder bij hover */
+    background-color: #dc9400;
 }
+
 
 
 
@@ -537,7 +609,8 @@ footer {
 /* --- Basis Instellingen --- */
 .containerRS {
     max-width: 800px;
-    height: 59vh;
+    height: auto;
+    min-height: 59vh;
     margin: 60px auto;
     padding: 0 20px;
 }
@@ -548,8 +621,18 @@ footer {
     color: #E7DEFF;
 }
 
+.formHeaderRS h1 {
+    font-size: 2.5rem;
+}
+
 .formHeaderRS h1 span {
     color: var(--primary-color);
+}
+
+.formHeaderRS p {
+    color: #DCC2AE;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 /* --- De Kaart (Card) layout --- */
@@ -592,9 +675,11 @@ footer {
     padding: 10px 0;
     font-size: 16px;
     outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.inputGroupRS input:focus {
+.inputGroupRS input:focus,
+.inputGroupRS select:focus {
     border-bottom-color: var(--primary-color);
 }
 
@@ -609,11 +694,11 @@ footer {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
 }
 
 .btnSubmitRS:hover {
-    transform: translateY(-2px); /* Klein effectje bij hover */
+    transform: translateY(-2px);
     background-color: #dc9400;
 }
 
@@ -649,13 +734,15 @@ footer {
 
 
 
+
 /* vacatures */
 
 /* --- 1. De Hero (Grid voor centreren) --- */
 .heroSectionVC {
     height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))-;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
     background-size: cover;
+    background-position: center;
     
     /* Grid is de makkelijkste manier om iets in het midden te zetten */
     display: grid;
@@ -665,6 +752,14 @@ footer {
 
 .heroContentVC{
   color: #E7DEFF;
+}
+
+.heroContentVC h1 {
+  font-size: 2.5rem;
+}
+
+.heroContentVC p {
+  font-size: 1.25rem;
 }
 
 /* --- 2. De Hoofd Layout (Twee kolommen) --- */
@@ -693,12 +788,23 @@ footer {
     margin-bottom: 20px;
 }
 
+.jobCardVC h3 {
+  color: #E7DEFF;
+  margin-bottom: 10px;
+}
+
+.jobCardVC p {
+  color: #DCC2AE;
+  font-size: 0.9rem;
+}
+
 .jobInfoVC {
     display: grid;
     /* Naam links (auto), badge rechts (max-content) */
     grid-template-columns: auto max-content;
     align-items: center;
     margin-bottom: 10px;
+    gap: 10px;
 }
 
 /* --- 4. Het Formulier (Grid in Grid) --- */
@@ -707,6 +813,11 @@ footer {
     padding: 30px;
     border-radius: 12px;
     color: #E7DEFF;
+}
+
+.cardBoxVC h2 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
 }
 
 .gridFormVC {
@@ -720,21 +831,36 @@ footer {
     gap: 15px;
 }
 
+.fieldVC {
+  display: flex;
+  flex-direction: column;
+}
+
 .fieldVC label {
     display: block;
     font-size: 11px;
     font-weight: bold;
     color: var(--primary-color);
     margin-bottom: 5px;
+    text-transform: uppercase;
 }
 
 .fieldVC input, .fieldVC select {
     width: 100%;
     padding: 10px;
-    background: #1d1732;
-    border: 1px solid var(--card-border);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--card-border);
     color: white;
-    border-radius: 4px;
+    border-radius: 0;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.fieldVC input:focus,
+.fieldVC select:focus {
+  border-bottom-color: var(--primary-color);
 }
 
 .submitButtonVC {
@@ -744,5 +870,525 @@ footer {
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
+    color: #442b00;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 16px;
+}
+
+.submitButtonVC:hover {
+  background-color: #dc9400;
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* TABLET (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* Header */
+    nav a {
+        margin-right: 12px;
+        font-size: 12px;
+    }
+    
+    /* Home */
+    .heroTitleHome {
+        font-size: 3rem;
+    }
+    
+    .philosophyTitleHome {
+        font-size: 1.75rem;
+    }
+    
+    /* Lunch & Diner */
+    .dishLD {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .signatureIntroLD {
+        margin-bottom: 60px;
+    }
+    
+    .signatureIntroLD h2 {
+        font-size: 2rem;
+    }
+    
+    .dishInfoLD h3 {
+        font-size: 1.75rem;
+    }
+    
+    /* Openingstijden */
+    .contentGridOP {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Reserveren */
+    .formGridRS {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contactGridRS {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Vacatures */
+    .mainContentVC {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 20px;
+    }
+    
+    .fieldRowVC {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+    /* General */
+    * {
+        font-size: 16px;
+    }
+    
+    /* Header */
+    header {
+        padding: 12px 15px;
+    }
+    
+    #umamiLogo {
+        height: 8vh;
+        max-width: 60px;
+    }
+    
+    .headerNav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navLinks {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        text-align: center;
+        order: 3;
+    }
+    
+    nav a {
+        margin-right: 0;
+        margin-bottom: 8px;
+        display: block;
+        font-size: 13px;
+    }
+    
+    button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .textFooter {
+        max-width: 100%;
+        width: 100%;
+        gap: 15px;
+        font-size: 12px;
+    }
+    
+    #footerIMG {
+        height: 8vh;
+        max-width: 50px;
+    }
+    
+    /* Home */
+    .homeContent {
+        padding-top: 40px;
+    }
+    
+    .heroSectionHome {
+        min-height: 70vh;
+    }
+    
+    .heroTitleHome {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    .heroDescHome {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        max-width: 100%;
+    }
+    
+    .heroOverlayHome {
+        background: linear-gradient(to bottom, transparent, #150f29);
+    }
+    
+    .philosophySectionHome {
+        padding: 50px 15px;
+    }
+    
+    .philosophyContainerHome {
+        padding: 0 15px;
+    }
+    
+    .philosophyTitleHome {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .philosophyDescHome {
+        font-size: 1rem;
+    }
+    
+    /* Lunch & Diner */
+    .heroLDcontent {
+        min-height: 50vh;
+        height: auto;
+    }
+    
+    .heroContentLD h1 {
+        font-size: 2rem;
+    }
+    
+    .heroContentLD p {
+        font-size: 1rem;
+    }
+    
+    .signatureLD {
+        padding: 50px 15px;
+    }
+    
+    .signatureIntroLD {
+        margin-bottom: 50px;
+    }
+    
+    .signatureIntroLD h2 {
+        font-size: 1.5rem;
+    }
+    
+    .signatureIntroLD p {
+        font-size: 1rem;
+    }
+    
+    .dishesLD {
+        gap: 80px;
+    }
+    
+    .dishLD {
+        gap: 20px;
+    }
+    
+    .dishIMGboxLD {
+        min-width: 100%;
+    }
+    
+    .dishInfoLD {
+        min-width: 100%;
+        padding: 0;
+    }
+    
+    .dishInfoLD h3 {
+        font-size: 1.5rem;
+    }
+    
+    .dishInfoLD p {
+        font-size: 0.95rem;
+    }
+    
+    .dishFooterLD {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .warmLD {
+        padding: 50px 0;
+    }
+    
+    .warmContainerLD {
+        padding: 0 15px;
+    }
+    
+    .warmIntroLD h2 {
+        font-size: 1.5rem;
+    }
+    
+    .warmItemLD {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .warmItemTextLD {
+        max-width: 100%;
+    }
+    
+    .ctaLD {
+        padding: 50px 15px;
+    }
+    
+    .ctaBoxLD {
+        padding: 0 15px;
+    }
+    
+    .ctaBoxLD h3 {
+        font-size: 1.75rem;
+    }
+    
+    .ctaButtonsLD {
+        gap: 12px;
+    }
+    
+    .btnPrimaryLD,
+    .btnSecondaryLD {
+        padding: 12px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    /* Openingstijden */
+    .contentOP {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .pageHeaderOP h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .contentGridOP {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .mapContainerOP img {
+        height: 250px;
+    }
+    
+    #kaartOP {
+        min-height: 250px;
+    }
+    
+    .cardOP {
+        padding: 15px;
+    }
+    
+    .cardOP h2 {
+        font-size: 1.1rem;
+    }
+    
+    /* Reserveren */
+    .containerRS {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+    
+    .formHeaderRS {
+        margin-bottom: 25px;
+    }
+    
+    .formHeaderRS h1 {
+        font-size: 1.75rem;
+    }
+    
+    .formHeaderRS p {
+        font-size: 0.9rem;
+    }
+    
+    .bookingCardRS {
+        padding: 25px;
+    }
+    
+    .formGridRS {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .inputGroupRS label {
+        font-size: 10px;
+    }
+    
+    .inputGroupRS input,
+    .inputGroupRS select {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+    
+    .btnSubmitRS {
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    .contactGridRS {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .contactItemRS {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    /* Vacatures */
+    .heroSectionVC {
+        height: 300px;
+    }
+    
+    .heroContentVC h1 {
+        font-size: 1.75rem;
+    }
+    
+    .heroContentVC p {
+        font-size: 1rem;
+    }
+    
+    .mainContentVC {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 0 auto 30px;
+        padding: 0 15px;
+    }
+    
+    .cardBoxVC {
+        padding: 20px;
+    }
+    
+    .cardBoxVC h2 {
+        font-size: 1.25rem;
+        margin-bottom: 18px;
+    }
+    
+    .jobCardVC {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .fieldRowVC {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .fieldVC input,
+    .fieldVC select {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+    
+    .submitButtonVC {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Header */
+    #umamiLogo {
+        height: 7vh;
+        max-width: 50px;
+    }
+    
+    nav a {
+        font-size: 11px;
+        margin-right: 0;
+    }
+    
+    button {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    /* Home */
+    .heroTitleHome {
+        font-size: 1.5rem;
+    }
+    
+    .philosophyTitleHome {
+        font-size: 1.25rem;
+    }
+    
+    /* Lunch & Diner */
+    .heroContentLD h1 {
+        font-size: 1.5rem;
+    }
+    
+    .signatureIntroLD h2 {
+        font-size: 1.25rem;
+    }
+    
+    .dishInfoLD h3 {
+        font-size: 1.25rem;
+    }
+    
+    .dishInfoLD p {
+        font-size: 0.9rem;
+    }
+    
+    .warmContainerLD {
+        padding: 0 12px;
+    }
+    
+    .ctaBoxLD h3 {
+        font-size: 1.5rem;
+    }
+    
+    .btnPrimaryLD,
+    .btnSecondaryLD {
+        padding: 10px 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    /* Openingstijden */
+    .pageHeaderOP h1 {
+        font-size: 1.5rem;
+    }
+    
+    .mapContainerOP img {
+        height: 200px;
+    }
+    
+    /* Reserveren */
+    .formHeaderRS h1 {
+        font-size: 1.5rem;
+    }
+    
+    .bookingCardRS {
+        padding: 18px;
+    }
+    
+    .inputGroupRS label {
+        font-size: 9px;
+    }
+    
+    /* Vacatures */
+    .heroSectionVC {
+        height: 250px;
+    }
+    
+    .heroContentVC h1 {
+        font-size: 1.5rem;
+    }
+    
+    .mainContentVC {
+        padding: 0 12px;
+    }
+    
+    .cardBoxVC {
+        padding: 15px;
+    }
+    
+    .cardBoxVC h2 {
+        font-size: 1.1rem;
+    }
 }
 
