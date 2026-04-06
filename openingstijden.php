@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Rainier Gondres">
+    <title>Umami Sushi</title>
+    <link rel="icon" href="images/logo_umami_sushi_1.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="lib/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/a2c653daa5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<?php
+include('lib/header.php');
+?>
+
+
+<?php
+include('lib/footer.php');
+?>
+
+</body>
+</html>
+
+

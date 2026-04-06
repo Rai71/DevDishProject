@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onze Kaart - DevDish</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, #f0f0f0);
+            z-index: 10;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            padding: 0 16px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            max-width: 672px;
+            margin: 0 auto;
+        }
+
+        /* Signature Section */
+        .signature {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 96px 32px;
+        }
+
+        .signature-intro {
+            text-align: center;
+            margin-bottom: 96px;
+            max-width: 672px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .signature-intro h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .signature-intro p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .dishes {
+            display: flex;
+            flex-direction: column;
+            gap: 128px;
+        }
+
+        .dish {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .dish-img-box {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .dish-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .dish-info {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .dish-label {
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .dish-info h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .dish-info p {
+            margin-bottom: 32px;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .dish-footer {
+            border-top: 1px solid #ccc;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .dish-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .dish-button {
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        /* Warm Section */
+        .warm {
+            background-color: #f9f9f9;
+            padding: 96px 0;
+        }
+
+        .warm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .warm-intro {
+            margin-bottom: 64px;
+        }
+
+        .warm-intro h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .warm-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .warm-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 32px;
+        }
+
+        .warm-item-text {
+            max-width: 400px;
+        }
+
+        .warm-item-text h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .warm-item-text p {
+            font-size: 0.875rem;
+        }
+
+        .warm-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 128px 0;
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .cta-box h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            background-color: #ffb94d;
+            color: #150f29;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn-secondary {
+            padding: 16px 40px;
+            border: 1px solid #ccc;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <img alt="Premium sushi chef" class="hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM8LVy7IS_yrw2Zt5-QZoHTGnVaxaOKPjc6UUeIxE2GLuzoAWoqQ9bgQc91C5CM2JKypKIzRwUQfjdnH0gLjwK8Eay5OD2CWoE44pqpxkEFSMHWr7NhEDJitYoZRd1fnZ5SqrkGKs203SBQLpqCPnia5ztTyFOo8wZ0JD2Q2ERGa2ngxFljRLMKqWLck9PqjyZtrN_WwufTWCSn02bp8_2o3YPyO4Un37d9dpHfxVFvWZtq0jVHJroiDznmKOU41kELDhFjPqORw"/>
+        <div class="hero-content">
+            <h1>Onze Kaart</h1>
+            <p>Minimalisme in Smaak</p>
+        </div>
+    </section>
+
+    <!-- Signature Selection -->
+    <section class="signature">
+        <div class="signature-intro">
+            <h2>Signature Gerechten</h2>
+            <p>
+                Geen eindeloze lijst, maar een zorgvuldig samengestelde selectie van onze meest iconische creaties. 
+                Focus op kwaliteit, niet op kwantiteit.
+            </p>
+        </div>
+
+        <div class="dishes">
+            <!-- Lunch Highlight -->
+            <div class="dish">
+                <div class="dish-img-box">
+                    <img alt="Chef's Lunch Omakase" class="dish-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLWOrp620gED1vf2YWwHsA13QWA0Tu_4gegSbBpKjf2TkgOwQUoqFM66fsoNrg-YlOp1qt1tqDh9EwTAN9UAIcQzACYDarYms2o-VzJ2clwm2eNye3_1F-3a18wrxTm3x86cZiLEegQI4tRIO5BIu8ehOa-nxGz10Y4LmUTuBFQ56yLu1cQfZygOLOKOkePfc4vFFBpDK4l-JG0UXAoT-oRvkezBpnBs7Nw9nrPNmLVScbfU4ibAMGYqgGX1NZPGKdg-RKl-r9EA"/>
+                </div>
+                <div class="dish-info">
+                    <span class="dish-label">Lunch Favoriet</span>
+                    <h3>Chef's Lunch Omakase</h3>
+                    <p>
+                        Een dagelijkse selectie van de meest verse vis van de markt. Inclusief 8 stuks nigiri, een handroll en onze huisgemaakte misosoep. 
+                        De perfecte balans voor een zakelijke lunch of een middag verfijning.
+                    </p>
+                    <div class="dish-footer">
+                        <span class="dish-price">€ 38</span>
+                        <button class="dish-button">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diner Highlight -->
+            <div class="dish">
+                <div class="dish-img-box">
+                    <img alt="Umami Signature Set" class="dish-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPGt9HgaIv5uhm592ivN9_s7G1qYF9G_0Cr4Ie42T5auZqWbg6ri_baaZhgqIjLNDDqZe0_y32Hj4RBeovXE1jjafdf42RF2zr9yfskBD7wwQbtSJ9MQgfd3Qbw1wPBirnnAHlw3ICuUlewPOykNhFBBgkHcq9Eo1UiAjl5J2jq9W8VZtJbwcJMSymjFfgLw0eahIUhdW661rkBQBALojo4ddAo9FuNaYHkVAPU_Y-uPhnGxH2F0TAdHZ4crCM2MCS3BXdx0K1-Q"/>
+                </div>
+                <div class="dish-info">
+                    <span class="dish-label">Diner Meesterwerk</span>
+                    <h3>Umami Signature Set</h3>
+                    <p>
+                        Onze trots. 16 zorgvuldig bereide stukken met onder andere O-Toro, Wagyu A5 met zwarte truffel en onze kenmerkende Black Cod. 
+                        Een diepe duik in de vijfde smaakdimensie.
+                    </p>
+                    <div class="dish-footer">
+                        <span class="dish-price">€ 64</span>
+                        <button class="dish-button">Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warm Dishes Section -->
+    <section class="warm">
+        <div class="warm-container">
+            <div class="warm-intro">
+                <h2>Warme Selectie</h2>
+                <p>Aanvullende delicatessen uit onze robata grill.</p>
+            </div>
+            <div class="warm-grid">
+                <div class="warm-item">
+                    <div class="warm-item-text">
+                        <h4>Black Cod Saikyo-yaki</h4>
+                        <p>In saikyo miso gemarineerde zwarte koolvis, 48 uur gerijpt.</p>
+                    </div>
+                    <span class="warm-price">€ 42</span>
+                </div>
+                <div class="warm-item">
+                    <div class="warm-item-text">
+                        <h4>A5 Wagyu Kushiyaki</h4>
+                        <p>Gegrilde Wagyu spiesen met sanchopeper en tare.</p>
+                    </div>
+                    <span class="warm-price">€ 28</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="cta-box">
+            <h3>Klaar voor de ervaring?</h3>
+            <div class="cta-buttons">
+                <a class="btn-primary" href="#">RESERVEREN</a>
+                <a class="btn-secondary" href="#">VOLLEDIGE KAART (PDF)</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
