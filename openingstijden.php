@@ -17,7 +17,41 @@
 <?php
 include('lib/header.php');
 ?>
+<main class="contentOP">
+    <section class="pageHeaderOP">
+        <h1>Locatie & <span>Openingstijden</span></h1>
+    </section>
 
+    <section class="contentGridOP">
+        <section class="mapContainerOP">
+            <img id="kaartOP" src="images/kaartleiden.png" alt="Kaart van Leiden">
+        </section>
+
+        <section class="infoColumnOP">
+            
+            <section class="cardOP">
+                <p><strong>Omakase Lane 123</strong></p>
+                <p>1011 AB, Amsterdam</p>
+            </section>
+
+            <section class="cardOP">
+                <h2>
+                    <span class="materialSymbolsOutlined">schedule</span> Tijden
+                </h2>
+                <p>Maandag - Vrijdag: 17:00 — 23:00</p>
+                <p>Zaterdag - Zondag: 16:00 — 00:00</p>
+            </section>
+
+            <section class="cardOP">
+                <p>📞 +31 (0)20 123 4567</p>
+                <p>✉️ hello@umamieditorial.nl</p>
+                <br>
+                <button class="btnPrimaryOP">DIRECT RESERVEREN</button>
+            </section>
+
+        </section>
+    </section>
+</main>
 
 <?php
 include('lib/footer.php');

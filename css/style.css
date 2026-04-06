@@ -437,3 +437,312 @@ footer {
   text-decoration: none;
   border-radius: 4px;
 }
+
+
+
+
+/* openingstijden */
+
+/* --- Variabelen (Zet deze bovenaan in je CSS als je die nog niet hebt) --- */
+:root {
+    --primary-color: #ffb94d;
+    --card-bg: #211c36;
+    --card-border: #37314d;
+}
+
+/* --- Hoofd Layout --- */
+.contentOP {
+    height: 63vh;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#kaartOP{
+  height: 40.5vh;
+  border-radius: 16px;
+}
+
+.pageHeaderOP h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #E7DEFF;
+}
+
+.pageHeaderOP h1 span {
+    color: var(--primary-color);
+}
+
+/* --- Grid Layout voor de 2 kolommen --- */
+.contentGridOP {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mapContainerOP img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* --- Informatie Kolom & Kaarten --- */
+.infoColumnOP {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Zorgt voor ruimte tussen de kaarten */
+}
+
+.cardOP {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 8px;
+    color: #E7DEFF;
+}
+
+.cardOP h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* --- Knop Styling --- */
+.btnPrimaryOP {
+    background-color: var(--primary-color);
+    color: #442b00;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btnPrimaryOP:hover {
+    background-color: #dc9400; /* Iets donkerder bij hover */
+}
+
+
+
+
+
+/* reserveren */
+
+
+/* --- Basis Instellingen --- */
+.containerRS {
+    max-width: 800px;
+    height: 59vh;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.formHeaderRS {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #E7DEFF;
+}
+
+.formHeaderRS h1 span {
+    color: var(--primary-color);
+}
+
+/* --- De Kaart (Card) layout --- */
+.bookingCardRS {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* --- Formulier Grid --- */
+.formGridRS {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Twee gelijke kolommen */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.inputGroupRS {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- Styling van Labels en Inputs --- */
+.inputGroupRS label {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.inputGroupRS input, 
+.inputGroupRS select {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--card-border);
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+    outline: none;
+}
+
+.inputGroupRS input:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+/* --- De Verzendknop --- */
+.btnSubmitRS {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #442b00;
+    border: none;
+    padding: 18px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btnSubmitRS:hover {
+    transform: translateY(-2px); /* Klein effectje bij hover */
+    background-color: #dc9400;
+}
+
+/* --- Onderste Contact items --- */
+.contactGridRS {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contactItemRS {
+    background-color: rgba(55, 49, 77, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contactItemRS .labelRS {
+    font-size: 10px;
+    font-weight: bold;
+    opacity: 0.6;
+    color: #FFB94D;
+}
+
+
+.containerLabelRS{
+  color: #E7DEFF;
+}
+
+
+
+
+/* vacatures */
+
+/* --- 1. De Hero (Grid voor centreren) --- */
+.heroSectionVC {
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))-;
+    background-size: cover;
+    
+    /* Grid is de makkelijkste manier om iets in het midden te zetten */
+    display: grid;
+    place-items: center; 
+    text-align: center;
+}
+
+.heroContentVC{
+  color: #E7DEFF;
+}
+
+/* --- 2. De Hoofd Layout (Twee kolommen) --- */
+.mainContentVC {
+    max-width: 1100px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+
+    display: grid;
+    /* We verdelen de ruimte: de linker en rechter kolom zijn even groot (1fr) */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; /* De ruimte tussen de kolommen */
+}
+
+
+.jobsColumnVC{
+  color: #E7DEFF;
+}
+
+/* --- 3. De Job Cards --- */
+.jobCardVC {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.jobInfoVC {
+    display: grid;
+    /* Naam links (auto), badge rechts (max-content) */
+    grid-template-columns: auto max-content;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* --- 4. Het Formulier (Grid in Grid) --- */
+.cardBoxVC {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    color: #E7DEFF;
+}
+
+.gridFormVC {
+    display: grid;
+    gap: 20px; /* Ruimte tussen alle invoervelden */
+}
+
+.fieldRowVC {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Telefoon en Functie naast elkaar */
+    gap: 15px;
+}
+
+.fieldVC label {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.fieldVC input, .fieldVC select {
+    width: 100%;
+    padding: 10px;
+    background: #1d1732;
+    border: 1px solid var(--card-border);
+    color: white;
+    border-radius: 4px;
+}
+
+.submitButtonVC {
+    background: var(--primary-color);
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+

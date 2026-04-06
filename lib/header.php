@@ -3,7 +3,7 @@
         <img id="umamiLogo" src="images/logo_umami_sushi_1.png" alt="Umami Sushi logo">
         <section>
            <nav class="navLinks">
-                <a class="active" href="index.php">Home</a>
+                <a class="#" href="index.php">Home</a>
                 <a href="lunchEnDiner.php">Lunch & Diner</a>
                 <a href="openingstijden.php">Openingstijden</a>
                 <a href="reserveren.php">Reserveren</a>
