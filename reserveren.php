@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="Rainier Gondres">
+    <meta name="author" content="Eren Yilmaz">
     <title>Umami Sushi</title>
     <link rel="icon" href="images/logo_umami_sushi_1.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">

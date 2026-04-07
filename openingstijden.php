@@ -38,13 +38,32 @@ include('lib/header.php');
                 <h2>
                     <span class="materialSymbolsOutlined">schedule</span> Tijden
                 </h2>
-                <p>Maandag - Vrijdag: 17:00 — 23:00</p>
-                <p>Zaterdag - Zondag: 16:00 — 00:00</p>
+                <section id="times">
+                    <ul id="opening" style="display: flex; flex-direction: column;">
+                        <h2>Opening</h2>
+                        <h2></h2>
+                        <li class="dag" style="color: red;">Maandag</li>
+                        <li class="dag" style="color: red;">Closed</li>
+                        <li class="dag">Dinsdag</li>
+                        <li class="dag">12:00 - 22:00</li>
+                        <li class="dag">Woensdag</li>
+                        <li class="dag">12:00 - 22:00</li>
+                        <li class="dag">Donderdag</li>
+                        <li class="dag">12:00 - 22:00</li>
+                        <li class="dag">Vrijdag</li>
+                        <li class="dag">12:00 - 22:00</li>
+                        <li class="dag">Zaterdag</li>
+                        <li class="dag">12:00 - 22:00</li>
+                        <li class="dag">Zondag</li>
+                        <li class="dag">12:00 - 22:00</li>
+                        <p id="openOrClosed"></p>
+                    </ul>
+                </section>
             </section>
 
             <section class="cardOP">
                 <p>📞 +31 (0)20 123 4567</p>
-                <p>✉️ hello@umamieditorial.nl</p>
+                <p>✉️ hello@umamiSusuhi.nl</p>
                 <br>
                 <button class="btnPrimaryOP">DIRECT RESERVEREN</button>
             </section>
